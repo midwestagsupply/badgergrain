@@ -9,6 +9,6 @@
   "city": "Wheeler",
   "state": "WI",
   "contact": "office@badgergrain.com",
-  "price_note": "!",
+  "price_note": null,
   "manual": null
 }
