@@ -39,7 +39,11 @@
      colour, which is worse than no colour at all: it is the confusion Jessi
      reported, printed on the one element that exists to distinguish them.
      Caught by rendering the page, not by reading the stylesheet. */
-  --sister-brand:#f5cf4e;
+  /* Midwest Commodity's own colour, deep pine since 2026-08-20. If this is
+     left at the old yellow, this page draws their wordmark in a colour that
+     is no longer theirs -- on the one element whose job is to tell the two
+     apart. Caught by rendering, not by reading. */
+  --sister-brand:#1c5f52;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;font-size:19px}
