@@ -8,7 +8,8 @@
   "location": "Wheeler",
   "city": "Wheeler",
   "state": "WI",
-  "contact": "office@badgergrain.com",
+  "_contact": "Set by Sig on 2026-08-20. Both sites publish this ONE address: one office does both elevators, which is also why both footers carry the same telephone number. It replaced office@badgergrain.com, which Midwest Commodity had been publishing as its own contact -- Badger's address on Midwest's feed. Badger published it too, and an open note in this project records that badgergrain.com may have no working MX at all, so the address that was on a licensed grain dealer's public feed may not have reached anybody. This is the only place it is configured: bids.json's terms.contact is written from here by tools/update-prices.mjs, and nothing else carries an email.",
+  "contact": "accounting@midwestagsupply.com",
   "price_note": "Prices change with the market and are not final until you call. Grain is bought subject to the drying and discount schedule below.",
   "manual": null
 }
