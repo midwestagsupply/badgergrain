@@ -515,35 +515,16 @@
 <!-- /TODAY:js -->
 
 
-<!-- THE CALL BAR. The page is 6,934px tall on a phone and the Call
-     button lives in the first 11% of it; past that there was no way to
-     ring the office without scrolling back up, which a farmer standing
-     at a scale does not do. Shown below 681px only, and LAST in the
-     document so it is last in the tab order and never jumps a keyboard
-     user over the page. aria-hidden on the decorative wrapper would hide
-     the link too, so the wrapper carries no role and the link speaks. -->
-<div class="callbar">
-  <a href="tel:+17157040548">Call the office &middot; (715) 704-0548</a>
-</div>
-<!-- THE FIXED CALL BAR STANDS DOWN WHILE THE PANEL'S OWN CALL BUTTON IS ON
-     SCREEN. Its whole justification is reaching a reader who has scrolled PAST
-     that button; on at the top of the page it just put two red bars with the
-     same number one after the other.
+<!-- THE FIXED CALL BAR IS GONE. Removed 2026-08-31 at Sig's word: "i hate
+     the call the office that moves with scroll, remove from both sites."
 
-     No observer, no JavaScript, or an older browser: nothing runs, the class
-     is never added, and the bar behaves exactly as it does today. The failure
-     mode is the status quo. -->
-<script>
-(function () {
-  "use strict";
-  var bar = document.querySelector(".callbar");
-  var call = document.querySelector(".call");
-  if (!bar || !call || !("IntersectionObserver" in window)) return;
-  new IntersectionObserver(function (entries) {
-    bar.classList.toggle("is-redundant", entries[0].isIntersecting);
-  }, { threshold: 0 }).observe(call);
-})();
-</script>
+     What it was for, written down so nobody re-derives it and puts it back:
+     the page is about 6,900px tall on a phone and the Call button sits in the
+     first 11% of it, so a reader who has scrolled past has no button in front
+     of them. THAT GAP IS REAL, AND IT IS NOW COVERED BY THE FOOTER, which
+     carries the same number as its own tel: link on its own line — the change
+     made on this same day for a different reason. Top of the page and bottom
+     of the page, and nothing pinned over the reading in between. -->
 
 </body>
 </html>

@@ -538,7 +538,7 @@ footer a[href^="tel:"]{display:inline-block;padding:10px 3px;margin:-10px 0}
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}
 
   /* Things that are a screen affordance and nothing on paper. */
-  .skip,.callbar,.sister,.notice-tag,.act,.actions{display:none!important}
+  .skip,.sister,.notice-tag,.act,.actions{display:none!important}
   .wrap{max-width:none;padding:0}
   html{font-size:12pt}
 }
@@ -553,83 +553,9 @@ footer a[href^="tel:"]{display:inline-block;padding:10px 3px;margin:-10px 0}
    either one. Rendering did, twice. */
 .logo .ear.art-rev{display:none}
 
-/* ---- 4. A DARK SCHEME, AND THE YELLOW HELD STILL --------------------
-   Every colour on this page is painted explicitly, so the tokens are the
-   whole of the change.
 
-   THE TRAP, and it was found by rendering rather than by reading: --ink
-   goes light in the dark, and the notice banner, the Open-today box and
-   the shrink figure all sit ON the yellow and inherit it. They rendered
-   at 1.6:1. The yellow is deliberately identical on both sites and must
-   not move, so what sits on it is pinned to near-black in BOTH schemes
-   instead. */
-@media(prefers-color-scheme:dark){
-  :root{
-    --ink:#f2f1ee;--paper:#17181a;--bg:#0f1011;--band:#1e1f22;
-    --line:#3a3c40;--line-lt:#2a2c30;--grey:#b3b6bb;
-    /* THE BRAND AS TEXT, LIGHTENED. Measured on the dark paper: the barn red
-       itself is 3.00:1 and the pine 2.38:1, both below the floor for the
-       25.6px Call title the vision layout sets in it. The tints clear it at
-       5.19:1 and 6.62:1. Declared here, inside :root -- a custom property
-       written loose in a media block is dropped silently, which is how the
-       first version of this shipped doing nothing. */
-    --brand-txt:var(--brand-dark-txt);
-  }
-  body{background:var(--bg)}
-  /* The two brand colours are dark-ground colours already -- barn red and
-     deep pine both carry white text at 5.9:1 and 6.4:1 -- so they do not
-     move either. Only their hover darkens the wrong way, so it lightens. */
-  .call:hover,.act-primary:hover{background:var(--brand-lt)}
-  th{background:var(--paper)}
-  .notice-tag{background:var(--ink);color:var(--bg)}
-  /* PINNED. These sit on the yellow, which has not moved. */
-  .notice,.notice .wrap,.notice-msg,.today,.today-lbl,.today-hrs,.shrink,.shrink strong,
-  .sister-a:hover{color:#141414}
-  .today.is-shut{background:#2a2b2d}
-  .today.is-shut .today-lbl{color:#b3b6bb}
-  .today.is-shut .today-hrs{color:var(--ink)}
-  /* The panel's scroll-shadow gradients are painted in white and near-black
-     literals; in the dark they drew a white haze down both edges. */
-  .panel{background-image:linear-gradient(to right,var(--paper),rgba(23,24,26,0)),
-                         linear-gradient(to left,var(--paper),rgba(23,24,26,0)),
-                         radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.55),rgba(0,0,0,0)),
-                         radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.55),rgba(0,0,0,0))}
-  .skip{background:var(--ink);color:var(--bg)}
-  /* THE REVERSED CORN COSTS NOTHING. Both ears have been committed as
-     white-engraved variants since before this pass and were referenced by
-     nothing; assets/README.md says they are "needed the moment the mark
-     goes on anything black". The moment has arrived.
-     The specificity is deliberate: .logo .ear.art-rev is (0,3,0) and beats
-     the .logo .ear rule that would otherwise show both at once. */
-  .logo .ear.art-lit{display:none}
-  .logo .ear.art-rev{display:block}
-}
 
-/* ---- 5. THE CALL BAR ------------------------------------------------
-   The page is 6,934px tall on a phone and the Call button sits in the
-   first 11% of it. Past that there is no way to ring the elevator without
-   scrolling back up. A farmer standing at a scale does not scroll back up.
 
-   NOTE FOR WHOEVER MEASURES THESE PAGES NEXT: until now nothing on either
-   site was fixed or sticky and screenshot geometry could be trusted
-   without thinking about it. That is no longer true below 681px. */
-.callbar{display:none}
-@media(max-width:680px){
-  .callbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;
-    background:var(--brand);border-top:3px solid var(--ink);
-    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
-    padding-left:max(16px,env(safe-area-inset-left));
-    padding-right:max(16px,env(safe-area-inset-right));
-    text-align:center}
-  .callbar a{display:block;color:var(--on-brand);text-decoration:none;font-weight:800;
-    font-size:1.12rem;letter-spacing:.01em;min-height:44px;line-height:44px}
-  .callbar a:hover,.callbar a:focus{text-decoration:underline}
-  /* So the bar never covers the last line of the footer. */
-  body{padding-bottom:78px}
-}
-@media(max-width:680px) and (prefers-color-scheme:dark){
-  .callbar{border-top-color:#000}
-}
 
 /* ---- 6. THE APP ICON CARRIED THE WRONG COLOUR ----------------------
    assets/icon.png drew its rule in --yellow on BOTH sites, while Badger
@@ -941,19 +867,6 @@ header{border-bottom:3px solid var(--ink)}
   footer .foot-tel{display:block}
 }
 
-/* 3. NO DOUBLE CALL BAR ON A PHONE.
-   The fixed bar's own note says why it exists: "the page is 6,934px tall on a
-   phone and the Call button lives in the first 11% of it; past that there was
-   no way to ring the office without scrolling back up." Past that. It was on
-   from the first pixel, so at the top of the page a reader met TWO red call
-   bars with the same number in a row — `.call` in the flow and `.callbar`
-   pinned under it.
-
-   It now hides while `.call` is actually on screen. The toggle is set by a
-   nine-line IntersectionObserver at the end of the page; WITHOUT JAVASCRIPT
-   NOTHING HAPPENS AND THE BAR STAYS VISIBLE, which is exactly today's
-   behaviour, so the failure mode is the status quo and not a missing button. */
-.callbar.is-redundant{display:none}
 
 /* The full stop after the telephone, and the 3px the tap-target padding
    indents it by, are both wrong once the number is a line of its own: a line
@@ -965,3 +878,25 @@ header{border-bottom:3px solid var(--ink)}
   footer .foot-dot{display:none}
   footer .foot-tel a[href^="tel:"]{padding-left:0}
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   THIS SITE IS LIGHT. There is no dark scheme, deliberately.
+   ══════════════════════════════════════════════════════════════════════════
+   Sig, 2026-08-31, looking at the live page: "i also hate the dark background."
+
+   Forty-four lines of `@media(prefers-color-scheme:dark)` came out with it —
+   a second palette, its own pinned colours for everything sitting on the
+   yellow, and a second set of panel gradients. Careful work, and gone, because
+   the owner does not want his page changing colour under him.
+
+   `color-scheme: light` is the other half of the same instruction and is not
+   decoration: without it a phone in dark mode repaints form controls,
+   scrollbars and the address bar dark around a light page. The browser is told
+   rather than left to guess.
+
+   IF THIS IS EVER REVERSED, here is the trap, found by rendering and not by
+   reading: --ink goes light in the dark, and the notice banner, the Open-today
+   box and the shrink figure all sit ON the yellow and inherit it. They
+   rendered at 1.6:1. The yellow is identical on both sites and must not move,
+   so anything sitting on it has to be pinned near-black in BOTH schemes. */
+:root{ color-scheme: light; }
