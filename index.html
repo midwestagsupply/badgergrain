@@ -29,6 +29,7 @@
     <meta name="twitter:image" content="https://badgergrain.com/og.png">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="assets/icon.png">
+<link rel="manifest" href="site.webmanifest">
 </head>
 <body>
 
@@ -37,9 +38,9 @@
 <header>
   <div class="wrap">
     <h1 class="logo">
-      <img class="ear l" src="assets/corn-left.png" alt="" aria-hidden="true">
+      <img class="ear l art-lit" src="assets/corn-left.png" alt="" aria-hidden="true"><img class="ear l art-rev" src="assets/corn-left-reversed.png" alt="" aria-hidden="true">
       <span class="wm" aria-hidden="true"><span class="wm1">Badger</span><span class="wmrule"></span><span class="wm2">Grain Supply</span></span>
-      <img class="ear r" src="assets/corn-right.png" alt="" aria-hidden="true">
+      <img class="ear r art-lit" src="assets/corn-right.png" alt="" aria-hidden="true"><img class="ear r art-rev" src="assets/corn-right-reversed.png" alt="" aria-hidden="true">
       <span class="sr-only">Badger Grain Supply, LLC</span>
     </h1>
     <p class="tag">Grain buying, drying and storage<span class="town">Wheeler, Wisconsin</span></p>
@@ -62,14 +63,14 @@
 
     <div class="pricecol" id="prices">
       <div class="panel">
-      <div class="hd">Prices paid today<span class="as">as of Monday, August 31, 5:09pm</span></div>
+      <div class="hd">Prices paid today<span class="as">as of Monday, August 31, 1:59pm</span></div>
       <table class="bids">
         <thead>
           <tr><th>Delivery</th><th class="r m-hide">Futures</th><th class="r m-hide">Basis</th><th class="r">We pay</th></tr>
         </thead>
         <tbody>
-          <tr><td class="mo">Cash, corn<span class="con">August delivery</span></td><td class="fut r m-hide">$5.15<span class="con">Sep 26</span></td><td class="bas r m-hide">−0.62</td><td class="pay r">$4.53</td></tr>
-          <tr><td class="mo">Harvest<span class="con">October and November delivery</span></td><td class="fut r m-hide">$5.3775<span class="con">Dec 26</span></td><td class="bas r m-hide">−0.55</td><td class="pay r">$4.83</td></tr>
+          <tr><td class="mo">Cash, corn<span class="con">August delivery</span></td><td class="fut r m-hide">$5.15<span class="q"></span><span class="con">Sep 26</span></td><td class="bas r m-hide">−0.62</td><td class="pay r">$4.53<span class="chg up">up 3¢ from Friday</span></td></tr>
+          <tr><td class="mo">Harvest<span class="con">October and November delivery</span></td><td class="fut r m-hide">$5.37<span class="q">¾</span><span class="con">Dec 26</span></td><td class="bas r m-hide">−0.55</td><td class="pay r">$4.83<span class="chg up">up 1¢ from Friday</span></td></tr>
         </tbody>
       </table>
 
@@ -79,9 +80,9 @@
     </div>
 
     <div class="panel hourspanel">
-      <div class="today is-shut">
-        <div class="today-lbl">Closed for the day</div>
-        <div class="today-hrs num">Tomorrow 8:00a</div>
+      <div class="today">
+        <div class="today-lbl">Open today, Monday</div>
+        <div class="today-hrs num">8:00a to 5:00p</div>
       </div>
       <div class="hrow"><span>Mon to Fri</span><span class="num">8:00a to 5:00p</span></div>
       <div class="hrow"><span>Saturday</span><span>Closed</span></div>
@@ -315,9 +316,9 @@
     <p class="sister-l">Our other location</p>
     <a class="sister-a" href="https://midwestcommodity.com/">
       <span class="logo sm">
-        <img class="ear l" src="assets/corn-left.png" alt="" aria-hidden="true">
+        <img class="ear l art-lit" src="assets/corn-left.png" alt="" aria-hidden="true"><img class="ear l art-rev" src="assets/corn-left-reversed.png" alt="" aria-hidden="true">
         <span class="wm" aria-hidden="true"><span class="wm1">Midwest</span><span class="wmrule"></span><span class="wm2">Commodity Service</span></span>
-        <img class="ear r" src="assets/corn-right.png" alt="" aria-hidden="true">
+        <img class="ear r art-lit" src="assets/corn-right.png" alt="" aria-hidden="true"><img class="ear r art-rev" src="assets/corn-right-reversed.png" alt="" aria-hidden="true">
       </span>
       <span class="sister-t"><strong>Midwest Commodity Service, Inc.</strong>Baldwin, Wisconsin. Same drying and discount schedule, same terms.</span>
     </a>
@@ -326,7 +327,7 @@
 
 <footer>
   <div class="wrap">
-    Badger Grain Supply, LLC. <span class="nb">E5210 1040th Avenue</span>, <span class="nb">Wheeler, WI 54772</span>. <a href="tel:+17157040548">(715) 704-0548</a>.<br>
+    Badger Grain Supply, LLC. <span class="nb">E5210 1040th Avenue</span>, <span class="nb">Wheeler, WI 54772</span>. <span class="foot-tel"><a href="tel:+17157040548">(715) 704-0548</a><span class="foot-dot">.</span></span><br>
     Licensed Wisconsin grain dealer and grain warehouse keeper. Prices change without notice and are not an offer to buy. Grain is bought subject to the posted drying and discount schedule. Copyright 2026 Badger Grain Supply, LLC.
   </div>
 </footer>
@@ -512,6 +513,37 @@
 })();
 </script>
 <!-- /TODAY:js -->
+
+
+<!-- THE CALL BAR. The page is 6,934px tall on a phone and the Call
+     button lives in the first 11% of it; past that there was no way to
+     ring the office without scrolling back up, which a farmer standing
+     at a scale does not do. Shown below 681px only, and LAST in the
+     document so it is last in the tab order and never jumps a keyboard
+     user over the page. aria-hidden on the decorative wrapper would hide
+     the link too, so the wrapper carries no role and the link speaks. -->
+<div class="callbar">
+  <a href="tel:+17157040548">Call the office &middot; (715) 704-0548</a>
+</div>
+<!-- THE FIXED CALL BAR STANDS DOWN WHILE THE PANEL'S OWN CALL BUTTON IS ON
+     SCREEN. Its whole justification is reaching a reader who has scrolled PAST
+     that button; on at the top of the page it just put two red bars with the
+     same number one after the other.
+
+     No observer, no JavaScript, or an older browser: nothing runs, the class
+     is never added, and the bar behaves exactly as it does today. The failure
+     mode is the status quo. -->
+<script>
+(function () {
+  "use strict";
+  var bar = document.querySelector(".callbar");
+  var call = document.querySelector(".call");
+  if (!bar || !call || !("IntersectionObserver" in window)) return;
+  new IntersectionObserver(function (entries) {
+    bar.classList.toggle("is-redundant", entries[0].isIntersecting);
+  }, { threshold: 0 }).observe(call);
+})();
+</script>
 
 </body>
 </html>
