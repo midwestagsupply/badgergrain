@@ -1,8 +1,8 @@
 location,company,city,state,commodity,bidType,deliveryStart,deliveryEnd,futuresSymbol,basis,cashPrice
-Wheeler,"Badger Grain Supply, LLC",Wheeler,WI,Corn,cash,September,September,,-0.82,4.55
-Wheeler,"Badger Grain Supply, LLC",Wheeler,WI,Corn,cash,October,October,,-0.62,4.75
-Wheeler,"Badger Grain Supply, LLC",Wheeler,WI,Corn,cash,November,November,,-0.55,4.82
-Wheeler,"Badger Grain Supply, LLC",Wheeler,WI,Corn,cash,December,December,,-0.60,4.77
+Wheeler,"Badger Grain Supply, LLC",Wheeler,WI,Corn,cash,September,September,,-0.82,4.56
+Wheeler,"Badger Grain Supply, LLC",Wheeler,WI,Corn,cash,October,October,,-0.62,4.76
+Wheeler,"Badger Grain Supply, LLC",Wheeler,WI,Corn,cash,November,November,,-0.55,4.83
+Wheeler,"Badger Grain Supply, LLC",Wheeler,WI,Corn,cash,December,December,,-0.60,4.78
 Wheeler,"Badger Grain Supply, LLC",Wheeler,WI,Corn,cash,January,January,,-0.70,4.82
 Wheeler,"Badger Grain Supply, LLC",Wheeler,WI,Corn,cash,February,February,,-0.68,4.84
 Wheeler,"Badger Grain Supply, LLC",Wheeler,WI,Corn,cash,March,March,,-0.60,4.92
