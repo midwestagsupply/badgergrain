@@ -13,11 +13,11 @@
   "contact": "accounting@midwestagsupply.com",
   "price_note": "Prices change with the market and are not final until you call. Grain is bought subject to the drying and discount schedule below.",
   "manual": null,
-  "updated_at": "2026-09-09T03:17:15.833Z",
+  "updated_at": "2026-09-09T14:27:11.547Z",
   "updated_by": "midwestagsupply",
   "months": {
     "September": {
-      "basis": -0.75,
+      "basis": -0.65,
       "publish": true
     },
     "October": {
