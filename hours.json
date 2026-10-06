@@ -1,6 +1,6 @@
 {
   "_comment": "The only file the office edits by hand until the staff screen is built.",
-  "weekday": "8:00a to 4:30p",
+  "weekday": "8:00a to 6:00p",
   "saturday": null,
   "sunday": null,
   "harvest": "8:00a to 7:00p",
@@ -8,8 +8,8 @@
   "closed_today": false,
   "today_override": null,
   "today_date": null,
-  "banner": "10/5/26 - Accepting corn from 8am - 4:30pm",
+  "banner": "10/6/26 - Accepting corn from 8am - 7pm",
   "hoursnote": null,
-  "updated_at": "2026-10-05T21:59:31.716Z",
+  "updated_at": "2026-10-06T12:52:03.773Z",
   "updated_by": "midwestagsupply"
 }
