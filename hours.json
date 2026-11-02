@@ -5,11 +5,11 @@
   "sunday": "8:00a to 12:00p",
   "harvest": "8:00a to 7:00p",
   "harvest_mode": false,
-  "closed_today": false,
+  "closed_today": true,
   "today_override": null,
-  "today_date": null,
-  "banner": "Sat 10/31- open 8am - 7pm\n*Sun 11/01- open 8am - Noon",
+  "today_date": "2026-11-02",
+  "banner": "11/2/26 Closed due to rain",
   "hoursnote": null,
-  "updated_at": "2026-10-31T19:34:36.861Z",
+  "updated_at": "2026-11-02T13:46:38.094Z",
   "updated_by": "midwestagsupply"
 }
